@@ -1,0 +1,19 @@
+
+ <div class="hov ">
+  <mat-card  >
+    <mat-card-title-group>
+      <mat-card-title>Grupo: {{grupo.descripcion}}</mat-card-title>
+      <!--<img mat-card-sm-image src="">-->
+      <div *ngIf="grupo.icono != null && grupo.icono != ''">
+        <span class="material-icons md-48 primary">{{grupo.icono}}</span>
+      </div>
+      <div *ngIf="grupo.icono == null || grupo.icono == ''">
+        <span class="material-icons md-48 primary">diversity_3</span>
+      </div> 
+    </mat-card-title-group>
+    <mat-card-content>
+      <b>Institución:</b> {{grupo.institucion}} <br>
+      <b>Rol:</b>  {{grupo.rol}} 
+    </mat-card-content> 
+  </mat-card> 
+</div>

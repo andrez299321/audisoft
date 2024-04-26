@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+$primary: mat-palette($mat-deep-purple);
+
+footer {
+  background-color: mat-color($primary);
+  
+}

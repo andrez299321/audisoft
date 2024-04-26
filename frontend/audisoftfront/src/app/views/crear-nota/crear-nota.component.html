@@ -1,0 +1,55 @@
+<form [formGroup]="form" (ngSubmit)="Save($event)">
+    <mat-card>
+        <mat-card-header>
+            <h4><b>{{titulo}}</b></h4>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <input formControlName="id" value="0" matInput type="number" placeholder="Id"/>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <input formControlName="nombre" placeholder="Materia" matInput type="text"/>
+                    </mat-form-field>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Profesor</mat-label>
+                        <mat-select formControlName="idProfesor" placeholder="Profesor">
+                          <mat-option *ngFor="let profesor of profesores" [value]="profesor.id" >{{ profesor.nombre }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Estudiante</mat-label>
+                        <mat-select formControlName="idEstudiante" placeholder="Estudiante">
+                          <mat-option *ngFor="let estudiante of estudiantes" [value]="estudiante.id" >{{ estudiante.nombre }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field class="full-width">
+                        <input formControlName="valor" placeholder="Nota" matInput type="number"/>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
+        </mat-card-actions>
+    </mat-card>
+    
+</form>
